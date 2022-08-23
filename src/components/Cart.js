@@ -75,7 +75,7 @@ const Cart = () => {
 
                                                     <div className="cart_items_info">
                                                         <h4>{title}</h4>
-                                                        <h3>₹ {itemTotal.toLocaleString()}</h3>
+                                                        <h3 className="price">₹ {itemTotal.toLocaleString()}</h3>
                                                     </div>
 
                                                     <div className="cart_items_quantity">

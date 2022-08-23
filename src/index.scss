@@ -102,6 +102,7 @@ img {
 img,
 svg {
     vertical-align: middle;
+    user-select: none;
 }
 
 
@@ -109,7 +110,6 @@ svg {
 .overflow_hide {
     overflow: hidden;
 }
-
 
 .container {
     max-width: 1320px;
@@ -119,10 +119,16 @@ svg {
     padding-right: 0.75rem;
 }
 
+#header,
+#footer,
+.cart_head,
+.cart_foot {
+    background-color: $primary-color;
+}
+
 
 /*--====== Header Section ======--*/
 #header {
-    background-color: $primary-color;
     position: fixed;
     top: 0;
     left: 0;
@@ -139,10 +145,6 @@ svg {
     position: relative;
     cursor: pointer;
 
-    &:hover svg {
-        fill: #eee;
-    }
-
     .badge {
         display: inline-block;
         background-color: darkred;
@@ -157,7 +159,7 @@ svg {
 
 /*--====== Home / Products Section ======--*/
 #home {
-    padding: 6rem 0 3rem;
+    padding: 6rem 0 4rem;
 }
 
 .home_content {
@@ -219,8 +221,7 @@ svg {
 /*--====== Footer Section ======--*/
 #footer {
     text-align: center;
-    background-color: $primary-color;
-    padding: 1rem 0;
+    padding: 1.4rem 0;
 
     p {
         letter-spacing: 1px;
@@ -259,27 +260,18 @@ svg {
 }
 
 .cart_content {
+    background-color: $secondary-color;
     position: absolute;
     top: 0;
     right: 0;
     max-width: 600px;
     width: 100%;
     height: 100%;
-    background-color: $secondary-color;
-}
-
-.cart_head,
-.cart_foot {
-    width: 100%;
-    background-color: $primary-color;
-    padding: 1rem;
-    text-align: center;
 }
 
 .cart_head {
-    position: sticky;
-    top: 0;
-    z-index: 99;
+    padding: 1rem;
+    text-align: center;
     box-shadow: $head-shadow;
 
     .close_btn {
@@ -289,6 +281,12 @@ svg {
         background-color: $secondary-color;
         padding: 0.4rem 0.6rem;
         cursor: pointer;
+        opacity: 0.8;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 1;
+        }
 
         span {
             font-size: 2.2rem;
@@ -299,7 +297,7 @@ svg {
 }
 
 .cart_body {
-    padding: 1rem;
+    padding: 1.8rem 1.5rem;
     max-height: 85%;
     overflow-x: hidden;
     overflow-y: auto;
@@ -307,30 +305,24 @@ svg {
 
 .cart_items {
     display: grid;
-    grid-template-columns: 0.6fr 0.7fr 0.2fr 0.1fr;
+    grid-template-columns: 0.5fr 0.7fr 0.2fr 0.1fr;
     align-items: center;
     gap: 2.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .cart_items_info {
-    h3 {
+    .price {
         font-weight: 600;
         margin-top: 0.5rem;
-
-        span {
-            font-size: 1rem;
-            font-weight: 500;
-            color: $text-light;
-        }
     }
 }
 
 .cart_items_quantity {
     display: flex;
     align-items: center;
-    gap: 0.8rem;
     flex-direction: column;
+    gap: 0.8rem;
     background-color: $primary-color;
     padding: 0.3rem 0;
 
@@ -339,32 +331,35 @@ svg {
         background-color: $body-color;
         line-height: 0.5;
         padding: 0.4rem;
+        user-select: none;
         cursor: pointer;
 
         &:hover {
-            color: #eee;
+            color: #ddd;
         }
     }
 }
 
 .cart_items_delete {
-    span {
-        font-size: 2rem;
-        cursor: pointer;
+    font-size: 2rem;
+    line-height: 0.5;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
 
-        &:hover {
-            color: #eee;
-        }
+    &:hover {
+        opacity: 1;
     }
 }
 
 .cart_foot {
     @include flex(space-between, center);
-    @extend .cart_head;
     position: absolute;
-    top: auto;
     bottom: 0;
     left: 0;
+    width: 100%;
+    padding: 1rem;
     box-shadow: $foot-shadow;
 
     h3 {
