@@ -2,15 +2,15 @@
 
 ### [Demo Link](https://react-shopping-cart-project.netlify.app/) 🔗
 
-**Shopping Cart UI** built with **React** using **Context API** & **useReducer Hook**.
+**Shopping Cart UI** built with **React**, using **Context API** & **useReducer Hook**.
 
 <br/>
 
 ## Features:
 
-- ### Add to Cart
-- ### Remove from Cart
-- ### Increment / Decrement the Quantity
+- #### Add to Cart
+- #### Remove from Cart
+- #### Increment / Decrement the Quantity
 
 <br/>
 
