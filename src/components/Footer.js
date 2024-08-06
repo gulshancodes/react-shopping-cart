@@ -6,18 +6,18 @@ const Footer = () => {
             <footer id="footer">
                 <div className="container">
                     <a
-                        href="https://github.com/Uday124/react-shopping-cart"
+                        href="https://github.com/gulshancodes/react-shopping-cart"
                         className="repo_link"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        github.com/Uday124codescodes/react-shopping-cart
+                        github.com/Uday124codes/react-shopping-cart
                     </a>
 
                     <p>
                         Built by | &nbsp;
                         <a
-                            href=""
+                            href="//"
                             target="_blank"
                             rel="noreferrer"
                         >
